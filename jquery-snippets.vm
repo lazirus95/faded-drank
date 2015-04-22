@@ -1,0 +1,138 @@
+<!-- JQUERY SNIPPETS -->
+
+
+<!-- Add Inline JS or jQuery -->
+#inline()
+	$(function(){
+	  $('nav').addClass('lolcats');
+	});
+#end
+
+<!-- Append Raw HTML -->
+$('.header-default').append('<img src="cat.jpg" />');
+
+<!-- Append Something Already Rendered -->
+$('.header-default').append($('.custom-hours'));
+
+<!-- Find something and replace something -->
+$('.header-default img').replaceWith('<a href="lol.htm"><img src="lol.jpg" /></a>');
+
+<!-- Append Phone Label to Header -->
+$('.header-default').append('<span>$i18n.get('labels','CUSTOM_PHONE1')</span>');
+
+
+
+===========================================
+<!-- ### Fancy jQuery For Reference ### -->
+===========================================
+
+<!-- Replace IMG source -->
+#inline()
+	$('.home-logolink .franchises li img').attr('src',function(i,e){
+		return e.replace("183x125.png","250x300.png");
+	})
+#end
+
+<!-- Replace HREF source -->
+#inline()
+	jQuery(function($){
+		$('.specials-category-list a[href="/specials/parts.htm"]').attr('href','/service-center/parts-specials.htm');
+	});
+#end
+
+
+
+<!-- Does... Something -->
+#if($pageAlias.contains("LISTING") && !$pageAlias.contains("USED"))
+	var elems = $('.hproduct'), count = elems.length; 
+	elems.each(function(){ 
+		var hasRebate = $('.stackedRebate:first',this);
+		if(hasRebate.length > 0){
+			$(this).append('<div class="incentivephrase">Click on the incentive amount to see details and requirements.</div>')
+		}
+	});
+#end
+
+<!-- Good for moving badges around -->
+#inline()
+	jQuery(function ($) {
+		$(".hproduct").each(function(){
+			$(this).find(".ddc-integrations-badgeprice").append($(this).find(".test-drive"));
+		});
+	});	
+#end
+
+<!-- Moves Badges or Price Stuff -->
+#if($pageAlias.contains("INVENTORY_LISTING"))
+	#inline()
+		jQuery(function($){
+			$('.inventory-listing-default .hproduct').each(function(){
+				$('.media',this).append($('.preApproved',this));
+				$('.pricing-area',this).append($('.buyItNow',this));
+			});
+		});
+	#end
+#end
+
+<!-- Each for doing stuff in VLPs -->
+#if($pageAlias.contains("INVENTORY_LISTING"))
+	#inline()
+		jQuery(function($){
+			$('.inventory-listing-default .hproduct').each(function(){
+				$('.media',this).append($('.preApproved',this));
+			});
+		});
+	#end
+#end
+
+<!-- Finds a specific Dealership name on locations page using account ID and replaces with Custom Label -->
+#inline()
+	jQuery(function($){
+		$('.locations-proximity li[data-account-id |= neilhuffmanmazdavwsub] span.org').replaceWith('<span class="org">$i18n.get('labels','CUSTOM_BODYSHOP_LOCATION_IMPORT')</span>');
+	});
+#end
+
+<!-- Finds an option that contains All Conditions, removes it, and turns visibility back on.  container will need visibility hidden in custom css first -->
+#if($pageAlias == "INDEX")
+	#inline()
+		jQuery(function($){
+			$(".inventory-search-facetbrowse option:contains('All Conditions')").remove();
+			$('.inventory-search-facetbrowse [name|="compositeType"]').css('visibility','visible');
+		});
+	#end
+#end
+
+
+
+<!-- INVERVAL TIMER FOR JS TO KEEP TRYING SOMETHING -->
+var myTimer = setInterval(function(){customDisclaim();},500);
+function customDisclaim(){
+	if($('.monthlyPayment p').hasClass('customDisclaimed')) {
+		clearInterval(myTimer);
+	} else {
+		$('.monthlyPayment p').append(' To well qualified buyers.').addClass('customDisclaimed');
+	}
+}
+
+
+<!-- Added to price.vm | Adds label using label and today's date  -->
+<!-- Goes in price.vm -->
+#if($pageAlias.contains("DETAILS"))
+	<li id="salepricenote">
+		$i18n.get( "labels","SALE_PRICE_EXPIRES_AT" ) 
+		<span id="date1"></span>
+	</li>
+#end
+<!-- Goes in customscripts.vm -->
+#if($pageAlias.contains("DETAILS"))
+	<script type="text/javascript">
+		var today = new Date();
+		document.getElementById('date1').innerHTML = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+	</script>
+	#inline()
+		jQuery(function($){
+			$('.inventory-detail-pricing .pricing').append($('#salepricenote'));
+		});
+	#end
+#end
+

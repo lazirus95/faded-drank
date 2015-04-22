@@ -1,0 +1,81 @@
+<!-- RANDOM SNIPPETS AND NOTES -->
+
+
+<!-- Fixes Local Host Port Forwarding -->
+Redirecting from port 80 on Mac OS X
+Create a link so Apache sees our configuration file, then turn on Web Sharing:
+
+sudo ln -s /cvs/nexus/build/cc7-local-httpd.conf /etc/apache2/other/cc7-local-httpd.conf
+sudo defaults write /System/Library/LaunchDaemons/org.apache.httpd Disabled -bool false
+sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+sudo /usr/sbin/httpd -k start -D WEBSHARING_ON
+
+
+<!-- Broken Coupon Link Can Be Fixed in Composer -->
+Go to Website -> Promotions and Media -> Service Builder Pro -> Manage Specials -> Service
+http://duvalacuraadw.cms.dealer.com/specials/service.htm
+
+<!-- DVS pull old stuff -->
+Grab the revision # from dvsweb (browser) or dvs log (terminal)
+dvs pull <siteId>/config -r revision#
+
+<!-- Ticket to Dev -->
+Open the account if of the site in the Client Dashboard.
+Then click on the "add activity" button located in the bottom left of the screen
+Then click on "Reported By Me" - Title Example- V9 | BUG | cci-build-price.vm missing Variable
+Add the description of the issue along with the path of the file that needs to be modified and include cms url to the page that is having the issue
+Click on the Next arrow or click on the "activity type" (info) icon on the left
+Click on "New Ticket"
+Select "BUG" from type dropdown
+Assignee field will be DEV
+And for the "Product" dropdown select one that refers to the issue. - I selected widget since it was a widget not showing up. 
+If it is global tick off "Global" on the bottom left
+Set priority to high
+click save 
+The End!
+
+<!-- Hidden Velocity Div Fix -->
+DNA4226268
+/cvs/nexus/cms-web/htdocs/v9/templates/variation-include-fragment/v1/pages.xml
+that's where template-include1 lives
+you can pull V9_VARIATION_INCLUDE_DEFAULT_V1 into site-pages.xml
+and remove the hide class from the parent group
+
+
+<!-- Update Prodev CS commands and other stuff -->
+tools
+git pull
+prodev setup
+
+cms-cache = develop
+cms-deploy = master
+cms-tools = develop
+cms-sites = master
+
+
+<!-- STRANGE CHARACTERS in sitewide JS - put closing script before your work and open script after -->
+ /*]]>*/
+</script>
+<script src='https://www.carcodesms.com/widgets/2459.js' type='text/javascript'></script>
+<script>
+
+
+</script> <!-- IGNORE THIS LINE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

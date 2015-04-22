@@ -1,0 +1,32 @@
+<!-- DVS SNIPPETS -->
+
+<!-- Profile Ref -->
+<profile-ref>cllcprofilev9</profile-ref>
+
+<!-- DEA -->
+<window portlet="v9.widgets.content.default.v1" id='content3'></window>
+
+<!-- Group Nav -->
+<window portlet='v9.widgets.locations.group-nav.v1' id='locations1'>
+	<preference name="widgetClasses" value="" />
+	<preference name="franchiseLogoSize" value="med" />
+	<preference name="franchiseLogoOpacity" value="transparent" />
+	<preference name="franchiseLogoColor" value="black" />
+	<preference name="childListSingleLogo" value="false" />
+	<preference name="showAddress" value="true" />
+	<preference name="showPhone" value="true" />
+</window>
+
+<!-- Custom Scripts -->
+<window-preferences-override id='default:template-include1'>
+  	<preference name='path' value='/sites/b/bettenimports/components/customscripts.vm'/>  
+</window-preferences-override>
+<window-preferences-override id='landing:template-include1'>
+  	<preference name='path' value='/sites/b/bettenimports/components/customscripts.vm'/>
+</window-preferences-override>
+<window-preferences-override id='default-mobile:template-include1'>
+  	<preference name='path' value='/sites/b/bettenimports/components/customscripts.vm'/>  
+</window-preferences-override>
+<window-preferences-override id='landing-mobile:template-include1'>
+  	<preference name='path' value='/sites/b/bettenimports/components/customscripts.vm'/>
+</window-preferences-override>

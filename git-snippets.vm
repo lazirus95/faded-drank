@@ -1,0 +1,13 @@
+<!-- GIT SNIPPETS -->
+
+
+git add --all                               #* Adds all new of modified files *#
+git add *.txt                               #* Adds all txt files in current directory (can change .txt to anything) *#
+
+git diff									#* Shows unstaged differences since last commit *#
+git diff --staged							#* Shows staged   differences since last commit *#
+
+git checkout -- <filename>                  #* Undo changes to specific file *#
+git reset --soft HEAD^              		#* Undo last commit, put changes into staging | Doesn't Lose Changes *#
+git reset --hard HEAD^						#* Undo last commit, and all changes          | Loses Changes *#
+git commit --amend -m "New Message"         #* Change last commit message *#

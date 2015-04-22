@@ -1,0 +1,93 @@
+<!-- VELOCITY SNIPPETS -->
+
+
+<!-- Editor Check -->
+#if(!$editorId)
+	#* StuffGoezHere *#
+#end
+
+<!-- Account ID Check -->
+#if($account.id == "oaklandacuraadw")
+
+#end
+
+<!-- Template Check -->
+#if($template == "v9_OEM_SCION_0001_V1")
+	#* StuffGoezHere *#
+#end
+
+<!-- Page Alias Check -->
+#if($pageAlias == "DIRECTIONS_DEFAULT")
+	#* StuffGoezHere *#
+#end
+
+<!-- Page Alias Check -->
+#if($pageAlias.contains("INVENTORY"))
+	#* StuffGoezHere *#
+#end
+
+<!-- Item type 1 is used, item type 2 is new -->
+#if($item.type == 1 && $pageAlias.contains("USED"))
+	#* StuffGoezHere *#
+#end
+
+<!-- Only runs code if ?test=true in URL -->
+#if($params.get( 'test' ) == 'true')
+	#* StuffGoezHere *#
+#end
+
+<!-- Parses file if site property exists and VLP new -->
+#if( $v.exists( $site.getProperties().get( "enableAutonationConditionalIncentives" ) ) && $item.type == 2 )
+	#parse("/sites/a/autonation/components/custom-autonation-incentives.vm")
+#end
+
+<!-- Add Inline JS or jQuery -->
+#inline()
+	$(function(){
+	  $('nav').addClass('lolcats');
+	});
+#end
+
+<!-- If NOT a ford and IS certified and IS VLP --> 
+#if($item.make != 'Ford' && $item.certified == true && $pageAlias.contains("LISTING"))
+	<img src="/sites/f/fordprofile/images/motor-trend-certified.png" />
+#end
+
+<!-- For vehicles with type of new and classification of exotic and status of in stock -->
+#* classification is primary(4), fleet(5), exotic(6), wholesale(7) etc. *#
+#if(!$editorId)
+	#if($item.type == 2 && $item.classification == 6 && $item.status == 1)
+		<li class="customExoticBadge"><img src="/sites/p/patmillikenfordfd/images/exoticBadge.jpg" /></li>
+	#end
+#end
+
+<!-- Put this code on a button to bring up a form -->
+#if($pageAlias == "INVENTORY_LISTING_DEFAULT_AUTO_NEW" || $pageAlias == "INVENTORY_LISTING_DEFAULT_AUTO_USED")
+	<li class="buyItNow">
+		<a class="dialog" data-href="/contact-fragment.htm?category=AUTO&amp;vehicleId=$item.uuid&amp;parentPageAlias=$pageAlias&amp;itemId=$item.uuid">
+			<img  alt="Buy it now logo" src="/sites/c/cllcprofilev9/images/Buy_It_Now_Button.png" />
+			<span>$i18n.get('labels','BUY_IT_NOW')</span>
+		</a>
+	</li>
+#end
+
+<!-- Adds Custom Comment Field to Badges -->
+#if(!$pageAlias.contains("DETAILS"))
+	<li class="itemComments">
+		#if($v.exists($item.comments) && "$!item.comments" != " " && "$!item.comments" != "   " && "$!item.comments" != "<br>")
+			  <span class="customComments" style="font-weight:bold;">Comments:</span><span class="customComments">#if($item.Comments.length() > 100)$item.comments.substring(0,150)...#else $item.comments #end</span>
+		#end
+	</li>
+#end
+
+<!-- Custom Button in Price.vm -->
+#if($pageAlias.contains("INVENTORY_LISTING"))
+	<li class="customFinanceButton">
+		#set( $componentSubCategory = "ui" )
+		#set( $componentName = "button" )
+		#set( $componentVersion = "v1" )
+		#set( $buttonContent = "GET_FINANCING")
+		#set( $buttonHref = "/financing/application-medium.htm?vehicleId=$item.uuid")
+		#parse( "/v9/assemblers/component/default/v1/assembler.vm") 
+	</li>
+#end
