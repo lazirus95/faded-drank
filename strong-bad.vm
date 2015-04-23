@@ -1,0 +1,45 @@
+<!-- STRONG BAD NOTES -->
+
+
+<!-- General Knowledge -->
+/cvs/nexus/cms-web/htdocs/v9/variations/oem-alfa
+Currently our work lives in this folder.
+
+<!-- Sass -->
+_base.scss - Main File
+_variation.scss - Generic css that's not page specific or widget specific
+_var-variation.scss - holds all variable names
+_ddc-pallet.scss - contains values for variables
+_widgets.scss - used for widget or page specific css that you don't want in _variation.scss
+	If making widget or page specific css, add to _widgets.scss and make new file in widget folder.
+	This is for heavy customization of one page and keeping stuff organized.
+
+
+<!-- Things To Be Careful Of -->
+be careful when modifying any link-list.  they appear on many different pages and use the same classes.
+
+
+
+<!-- Git Commands -->
+cms-web-build install
+	If you have an error running cwb build, run this.
+
+cwb build
+	Goes through each of the variations in cmw-web and looks at JS and SASS and
+	compiles them all which spits out css files and stores them in dist folder.
+
+	Note: You'll want to build everytime you switch to a new branch
+
+
+
+
+
+
+<!-- Fixes Local Host Port Forwarding -->
+Redirecting from port 80 on Mac OS X
+Create a link so Apache sees our configuration file, then turn on Web Sharing:
+
+sudo ln -s /cvs/nexus/build/cc7-local-httpd.conf /etc/apache2/other/cc7-local-httpd.conf
+sudo defaults write /System/Library/LaunchDaemons/org.apache.httpd Disabled -bool false
+sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+sudo /usr/sbin/httpd -k start -D WEBSHARING_ON

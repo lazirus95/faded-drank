@@ -1,14 +1,6 @@
 <!-- RANDOM SNIPPETS AND NOTES -->
 
 
-<!-- Fixes Local Host Port Forwarding -->
-Redirecting from port 80 on Mac OS X
-Create a link so Apache sees our configuration file, then turn on Web Sharing:
-
-sudo ln -s /cvs/nexus/build/cc7-local-httpd.conf /etc/apache2/other/cc7-local-httpd.conf
-sudo defaults write /System/Library/LaunchDaemons/org.apache.httpd Disabled -bool false
-sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-sudo /usr/sbin/httpd -k start -D WEBSHARING_ON
 
 
 <!-- Broken Coupon Link Can Be Fixed in Composer -->
