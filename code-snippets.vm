@@ -1,11 +1,41 @@
 <!-- RANDOM SNIPPETS AND NOTES -->
 
+Ask Tram for Gym access need to sign waiver form
+
+Benefits = 2pm central - <need phone numner>
+Should receive 401K email after 30 days.  match 50% up to 6%
+Tuition reimbursement - up to 5,250 per year for degree program related to position
+17 days per year.  acrue and 1.42 per month.  Can borrow up to 5 days
+PTO do not rollover, use by dec 31st.
+get 22 days by 3-5 year worked
+get 4 half days - get 3 this year (do not rollover either)
+8 hours for volunteer work - go to inside track - for 501c(3)
+Go to inside track for SAP - entering time, vacation, view pay stubs etc.
+look at inside track - discounts and perks for vehicles and stuff
+pay statements are on inside track - ADP - iPay
+can also get W2 through inside track
+Get first check as paper check -> Tina Heart -> on May 15th as a paper check
+
+Health and wellness
+livewellIDT.com - can also check inside track - employeeID = always use capital E followed by number
+
+Concur - on inside track - handles receipts for traveling on company business
 
 
+
+	modified:   images/mopar-stripe.png
+	modified:   sass/widgets/_mopar.scss
+	modified:   widgets/content/mopar/js/mopar.js
+
+
+<!-- Continued Education -->
+http://philipwalton.com/articles/decoupling-html-css-and-javascript/
+http://viget.com/extend/client-side-separation-of-concerns-are-we-doing-it-wrong
+http://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement
+http://webdesign.about.com/od/webdesignglossary/g/graceful-degradation.htm
 
 <!-- Broken Coupon Link Can Be Fixed in Composer -->
 Go to Website -> Promotions and Media -> Service Builder Pro -> Manage Specials -> Service
-http://duvalacuraadw.cms.dealer.com/specials/service.htm
 
 <!-- DVS pull old stuff -->
 Grab the revision # from dvsweb (browser) or dvs log (terminal)
