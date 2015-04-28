@@ -8,6 +8,14 @@ git diff									#* Shows unstaged differences since last commit *#
 git diff --staged							#* Shows staged   differences since last commit *#
 
 git checkout -- <filename>                  #* Undo changes to specific file *#
+git checkout <branch> 						#* Switched to specified branch *#
 git reset --soft HEAD^              		#* Undo last commit, put changes into staging | Doesn't Lose Changes *#
 git reset --hard HEAD^						#* Undo last commit, and all changes          | Loses Changes *#
 git commit --amend -m "New Message"         #* Change last commit message *#
+
+
+
+cms-web-build install                       #* If you have an error running cwb build, run this. *#
+cwb build  									#* Builds ALL Sass and JS in cms-web. Run this after switching branches *#
+buildalfa 									#* Builds ALL Sass and JS in only Alfa variation. *#
+watchalfa 									#* Builds ALL Sass and JS in only Alfa variation when change detected. Automatic. *#

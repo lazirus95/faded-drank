@@ -1,7 +1,6 @@
-<!-- STRONG BAD NOTES -->
-
-
-
+/* ===================================================================================================== */
+	STRONG BAD NOTES
+/* ===================================================================================================== */
 
 <!-- General Workflow -->
 cmsrun -l
@@ -20,46 +19,11 @@ startfeature US12345 (makes new branch)
 git fetch
 git checkout feature/US12345
 
-
-
-<!-- Notes with Ed -->
-Rally ->
-My Settings -> Default WorkSpace DT Corp Strong Bad
-
-Default Detail mode Viewing:
-
-
-
-
-First….
-
-Click on Track -> Iteration Status
-
-Shows Info for Current Spring
-
-
-CLOSING TASK
-Click Task -> Select Tasks ->Edit
-Mark To Do Hours
-
-
-SELECTING TASK
-Change state to In Progress then hit DONE
-
-
-Making new branch
-git checkout develop
-git pull
-startfeature US12345 (makes new branch)
+/* IMPORTANT */
+Everytime you switch to new branch or git pull, rebuild your assets for localhost.
 
 create new file _mycars.scss in widgets folder
 add file to _widgets.scss
-
-setup a watch on alfa - keeps looking for changes in file and will recompile assets when you save a file.
-
-Everytime you switch to new branch or git pull, rebuild your assets for localhost.
-
-when done, stop watch
 
 git status
 git add .
@@ -76,14 +40,8 @@ git status
 git pull
 buildalfa
 
-add in content
-move up molar image
-mover over page title to align with text
+/* ===================================================================================================== */
 
-alfa02 - populates test data
-US7927
-
-pullall  - pulls and updates cmd-web, sites, etc.
 
 <!-- Sass -->
 _base.scss - Main File
@@ -98,34 +56,6 @@ _widgets.scss - used for widget or page specific css that you don't want in _var
 <!-- Things To Be Careful Of -->
 be careful when modifying any link-list.  they appear on many different pages and use the same classes.
 
+/* ===================================================================================================== */
 
 
-<!-- Git Commands -->
-cms-web-build install
-	If you have an error running cwb build, run this.
-
-cwb build
-	Goes through each of the variations in cmw-web and looks at JS and SASS and
-	compiles them all which spits out css files and stores them in dist folder.
-
-	Note: You'll want to build everytime you switch to a new branch
-
-
-
-
-
-
-<!-- Fixes Local Host Port Forwarding -->
-Redirecting from port 80 on Mac OS X
-Create a link so Apache sees our configuration file, then turn on Web Sharing:
-
-sudo ln -s /cvs/nexus/build/cc7-local-httpd.conf /etc/apache2/other/cc7-local-httpd.conf
-sudo defaults write /System/Library/LaunchDaemons/org.apache.httpd Disabled -bool false
-sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-sudo /usr/sbin/httpd -k start -D WEBSHARING_ON
-
-<!-- Mobile Notes -->
-_variation-mobile.scss = 
-_base-mobile.scss = contains mobile widget imports
-widgets-mobile folder = contains actual widget specific css
-you can drag and drop code from browser into xcode simulator

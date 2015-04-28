@@ -1,6 +1,11 @@
 <!-- RANDOM SNIPPETS AND NOTES -->
 
-Ask Tram for Gym access need to sign waiver form
+
+6:30-8:30 Tuesdays Side-Project Meetup
+Meet 1st floor L3 conference room.
+Right door towards parking garage last door on the left
+meetup.com
+
 
 Benefits = 2pm central - <need phone numner>
 Should receive 401K email after 30 days.  match 50% up to 6%
@@ -22,17 +27,6 @@ livewellIDT.com - can also check inside track - employeeID = always use capital 
 Concur - on inside track - handles receipts for traveling on company business
 
 
-
-	modified:   images/mopar-stripe.png
-	modified:   sass/widgets/_mopar.scss
-	modified:   widgets/content/mopar/js/mopar.js
-
-
-<!-- Continued Education -->
-http://philipwalton.com/articles/decoupling-html-css-and-javascript/
-http://viget.com/extend/client-side-separation-of-concerns-are-we-doing-it-wrong
-http://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement
-http://webdesign.about.com/od/webdesignglossary/g/graceful-degradation.htm
 
 <!-- Broken Coupon Link Can Be Fixed in Composer -->
 Go to Website -> Promotions and Media -> Service Builder Pro -> Manage Specials -> Service
@@ -85,8 +79,14 @@ cms-sites = master
 </script> <!-- IGNORE THIS LINE -->
 
 
+<!-- Fixes Local Host Port Forwarding -->
+Redirecting from port 80 on Mac OS X
+Create a link so Apache sees our configuration file, then turn on Web Sharing:
 
-
+sudo ln -s /cvs/nexus/build/cc7-local-httpd.conf /etc/apache2/other/cc7-local-httpd.conf
+sudo defaults write /System/Library/LaunchDaemons/org.apache.httpd Disabled -bool false
+sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+sudo /usr/sbin/httpd -k start -D WEBSHARING_ON
 
 
 
